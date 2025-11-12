@@ -69,6 +69,7 @@ rm -f .pid || true
 }
 
 
+
         stage('Archive') {
             steps {
                 dir('node-welcome-server/node-welcome-server') {
