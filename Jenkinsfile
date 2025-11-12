@@ -1,5 +1,10 @@
+// ...existing code...
 pipeline {
     agent any
+
+    tools {
+        nodejs "NodeJS_18"
+    }
 
     environment {
         NODE_ENV = 'production'
