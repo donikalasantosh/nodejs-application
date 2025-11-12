@@ -3,9 +3,7 @@
   "version": "1.0.0",
   "main": "src/index.js",
   "scripts": {
-  "start": "node node-welcome-server/node-welcome-server/src/index.js"
-
-
+    "start": "node src/index.js",
     "test": "echo \"No tests configured\" && exit 0",
     "build": "echo \"No build step\" && exit 0"
   },
