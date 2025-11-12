@@ -48,25 +48,26 @@ node -e "try{const p=require('./package.json'); process.exit(p.scripts && p.scri
         }
 
         stage('Smoke Test') {
-            steps {
-                dir('node-welcome-server/node-welcome-server') {
-                    sh '''
+    steps {
+        dir('node-welcome-server/node-welcome-server') {
+            sh '''
 nohup npm start > server.log 2>&1 & echo $! > .pid
 sleep 2
 if curl -fsS http://localhost:${PORT}/ -o /dev/null; then
   echo "smoke test passed"
 else
   echo "smoke test failed"
-  cat server.log
+  tail -n 20 server.log
   kill $(cat .pid) || true
   exit 1
 fi
 kill $(cat .pid) || true
 rm -f .pid || true
 '''
-                }
-            }
         }
+    }
+}
+
 
         stage('Archive') {
             steps {
