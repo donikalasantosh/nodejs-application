@@ -14,7 +14,15 @@ pipeline {
     stages {
         stage('Install') {
             steps {
-                sh 'npm ci'
+                sh '''
+if [ -f package-lock.json ]; then
+  echo "Lockfile found, running npm ci..."
+  npm ci
+else
+  echo "No lockfile found, running npm install..."
+  npm install
+fi
+'''
             }
         }
 
