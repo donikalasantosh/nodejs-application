@@ -1,0 +1,14 @@
+{
+  "name": "node-welcome-server",
+  "version": "1.0.0",
+  "description": "A simple Node.js server that displays a welcome message.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "author": "",
+  "license": "ISC"
+}
